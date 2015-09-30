@@ -1,2 +1,4 @@
 # Codeigniter_MY_model
 Codeigniter_MY_model  超级model的建立和使用，
+分享下最近在开发中用CI框架在编写model时遇到的一些困惑
+#使用一个model来进行增删改查和统计数量
