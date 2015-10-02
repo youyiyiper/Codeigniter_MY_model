@@ -124,7 +124,7 @@ class MY_Model extends CI_Model {
      * 查：返回多条数据方式一(该方法传入的参数较多，使用时比较别扭)
      *
      * @param   string      $table      表名名称
-     * @param               $where      查询条件，可数组可字符串
+     * @param   string      $where      查询条件，可数组可字符串
      * @param   string      $field      查询字段，默认查询所有 *
      * @param   string      $orderby    排序
      * @param   number      $offset     偏移量，默认为0
