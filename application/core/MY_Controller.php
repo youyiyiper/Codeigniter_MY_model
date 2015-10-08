@@ -13,6 +13,6 @@ class MY_Controller extends CI_Controller{
 
     //初始化模型对象
     public function model(){
-        $this->model = load_class('Model', 'core');
+        $this->model = & load_class('Model', 'core');
     }
 }

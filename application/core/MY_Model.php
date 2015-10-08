@@ -174,7 +174,7 @@ class MY_Model extends CI_Model {
         }
 
         //分页
-        if($offset > 0){
+        if(isset($offset) && isset($limit)){
             $this->db->limit($limit, $offset);
         }
 
@@ -232,7 +232,7 @@ class MY_Model extends CI_Model {
         //查询
         $this->db->select($field);
 
-        if(!empty($offset) && !empty($limit)){
+        if(isset($offset) && isset($limit)){
             $this->db->limit($limit, $offset);
         }
 
