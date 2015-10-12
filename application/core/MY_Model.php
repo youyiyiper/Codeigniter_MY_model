@@ -174,7 +174,9 @@ class MY_Model extends CI_Model {
         }
 
         //分页
-        if(isset($offset) && isset($limit)){
+        if(isset($limit)){
+            
+            $offset=isset($offset) ? intval($offset) : 0;
             $this->db->limit($limit, $offset);
         }
 
@@ -232,7 +234,10 @@ class MY_Model extends CI_Model {
         //查询
         $this->db->select($field);
 
-        if(isset($offset) && isset($limit)){
+        //分页
+        if(isset($limit)){
+            
+            $offset=isset($offset) ? intval($offset) : 0;
             $this->db->limit($limit, $offset);
         }
 
@@ -415,6 +420,27 @@ class MY_Model extends CI_Model {
         $result = $query->row_array();
 
         return $result;
+    }
+
+    /**
+     *直接sql查询
+     *
+     * @param     $sql     string         自定义sql语句
+     * @return   mixed                   返回单条数据，为空返回空数组；操作错误则返回false
+    */
+    public function sql_query($sql=''){
+        if($sql===''){
+            return FALSE;
+        }
+
+        $query=$this->db->query($sql);
+        $result = $query->result_array();
+
+        if(count($result) ==0){
+            return array();
+        }else{
+             return $result;
+        }
     }
 
     /**
