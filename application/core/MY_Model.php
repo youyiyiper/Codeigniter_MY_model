@@ -454,7 +454,7 @@ class MY_Model extends CI_Model {
              * $row[1] 为 关联条件
              * $row[2] 为 JOIN的类型，可选项包括： left, right, outer, inner, left outer, 以及 right outer
              */
-            $join_type = isset($row[2]) ? $row[2] : 'inner';
+            $join_type = isset($row[2]) ? $row[2] : 'left';
             $this->db->join($row[0], $row[1], $join_type);
         }
     }
